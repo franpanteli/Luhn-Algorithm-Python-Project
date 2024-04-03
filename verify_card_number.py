@@ -107,6 +107,30 @@ def verify_card_number(card_number):
     total = sum_of_odd_digits + sum_of_even_digits
     return total % 10 == 0
 
+"""
+    About this function:
+        -> The second function this .py file defines is the `main()` function 
+        -> Its first function is the `verify_card_number()` function <- This defined the use of the Luhn algorithm on the input credit
+            card number 
+        -> This second function is more generic code, to test the use of this function - rather than defining it
+
+    More details:
+        -> `card_number` <- We first define this variable, which stores a test credit card number
+        -> We then define a translation table and store this in the `maketrans` variable 
+        -> This tells the function which characters in the previous variable we want to replace with what 
+        -> `translated_card_number` <- This applies the translation table to the `card_number` variable 
+        -> We are replacing certain digits in the input card number with others
+
+        -> Then in the if block:
+            -> We are applying this function to the card number in the if block 
+            -> Depending on the output of this, we are returning a statement 
+            -> The output of this function is a boolean, which performs the Luhn algorithm  - to determine if the input card number is 
+                valid or not 
+            -> Then depending on if the boolean from executing this function is True or False, we are outputting messages in the if 
+                block for the code 
+            -> This tells us if the card number which has been entered is valid or invalid, by performing the Luhn algorithm
+"""
+
 def main():
     card_number = '4111-1111-1111-1111'
     card_translation = str.maketrans({'-': '', ' ': ''})
