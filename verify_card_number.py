@@ -72,31 +72,31 @@ def verify_card_number(card_number):
     In the context of the wider .py file: 
         -> We are trying to validate that the input to the function, which is a credit card number, is a real credit card 
         number
-        -> We are doing this using the Luhn algorithm
+        -> We are doing this by encoding the Luhn algorithm
         -> We need to calculate the sum of the integers which are stored at even indices in the input number and doing the 
             same with the numbers stored at the odd integers
         -> We then add these two together and calculate their sum
-        -> We perform a modulo 10 operation on this in relation to 10 <- In which case, depending on the output, the card 
-            number is valid or invalid 
+        -> We perform a modulo 10 operation on this sum, in relation to 10 <- In which case, depending on the output, this is 
+            either a valid or invalid card number 
         -> The first function which we are defining in this .py file is for the card number validator and the second function 
         is for testing this 
 
-    This next block of code in the first function this .py file defines:
+    This next block of code in the function:
         -> The argument of the function is a credit card number 
         -> We are iterating through each of the digits stored at even indices of this number 
         -> Most of the code inside this block then codes the mathematics of the Luhn algorithm into Python 
         -> We are iterating through all of the digits which are stored at even indices in the credit card
         -> We times each of these numbers by 2 
-        -> Then we perform modulo operations to apply the Luhn algorithm
+        -> Then we perform modulo operations, to apply the Luhn algorithm to this 
         -> More information about the precise steps of this is in the project problem-solving thought process notes file <- There 
-            are broadly three steps to this in this case
+            are broadly three steps to this 
         -> Then we add this number to the `sum_of_even_digits` variable 
-        -> We are updating the value of this variable with each digit we iterate through 
+        -> We are updating the value of this variable with each digit iterated through 
 
     Updating sums:
         -> After the value of this variable has been updated, we then update the value of the `total` variable 
         -> This is the sum of the even digits and the sum of the odd digits 
-        -> Then return this put into a boolean expression with the modulo 10 operator, to apply the Luhn algorithm
+        -> Then return this put, into a boolean expression with the modulo 10 operator - to apply the Luhn algorithm
 """
 
     for digit in even_digits:
