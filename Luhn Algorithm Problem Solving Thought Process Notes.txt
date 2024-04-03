@@ -1,0 +1,52 @@
+-> The Luhn algorithm <- To validate identification numbers
+-> We declare a function called main 
+	-> Under that function we define a variable which contains a credit card number 
+	-> The whole point of this algorithm is card numbers / security 
+	-> str.maketrans({'t': 'c', 'l': 'b'}) <- To replace characters in a string; to make a translation table 
+		-> Replace all t characters with c and all l characters with b 
+		-> We are replacing spaces and -'s in credit card numbers with empty strings <- str.maketrans({'-': '', ' ': ''})
+		-> This has to be called on the string, with the translation table as the argument 
+		-> We define a translation table (replace this string with another one) and then apply it on this string as an argument 
+		-> E.g:
+
+my_string = "tamperlot"
+translation_table = str.maketrans({'t': 'c', 'l': 'b'})
+translated_string = my_string.translate(translation_table)
+
+		-> We have a string 
+		-> Then we have a translation table 
+		-> Then we apply the translation table to the string, by using .translate()
+
+-> The Luhn algorithm:
+	1. From the right to left, double the value of every second digit; if the product is greater than 9, sum the digits of the products
+	2. Take the sum of all the digits
+	3. If the sum of all the digits is a multiple of 10, then the number is valid; else it is not valid
+
+	-> It's a set of instructions for the computer to follow
+	-> For example, "7992739871" will have a check digit added 
+	-> This will make it of the form 7992739871x:
+	-> string[x:y:h]: <- To access elements in a string (start:stop:step)
+	-> We are using this to select and print different digits of the credit card number 
+
+-> Processing credit card numbers with Python:
+	-> You can omit the x and the y 
+		-> For example:
+			my_string = 'camperbot'
+			camperbot = my_string[::]
+	-> card_number_reversed = card_number[::-1]
+		-> This is an example of this 
+		-> Include all of the numbers in the card, and print them going backwards 
+	-> If you want something that contains "every other" digit, then you use ::2 <- in this case
+	-> We are iterating through each of the digits in the credit card number
+	-> You can add a string to an integer if you convert the string to an integer 
+		-> This is done using int(my_string) in this case <- convert this string to an integer 
+
+-> A word about efficiency, some of the lines of code which fit onto two lines can be combined into one 
+-> If you are asked to return even numbers, you can increase the steps in batches of 2 
+	-> You can iterate through just the list of even digits (in this case)
+	-> Then if the number we are iterating through is >=10, here, we are performing modulo operations and updating the values of certain variables, using += <- This variable equals its previous value, plus this 
+-> We are doing through the stages of the algorithm and coding each of them 
+-> You have to int(digit) <- in this example, if you are timsimg something and you get an error, the solution might be that you had to convert it into an integer first 
+-> The length of a credit card number is 16 digits, and in this project we are making sure each of the digits in this is between 1 and 10
+	-> We do this using modulo 
+	-> In the previous project as part of this course, when analysing strings, we were making sure that the index which a letter had in the alphabet didn't go past 26 (or the length of the alphabet) <- In this case we would use modulo 26
