@@ -35,6 +35,18 @@ Initialising variables:
     card_number_reversed = card_number[::-1]
     odd_digits = card_number_reversed[::2]
 
+"""
+Building the sum_of_odd_digits variable: 
+-> `odd_digits` is the variable which contains the odd digits in the credit card number <- The input to the function 
+-> We are iterating through each of the digits in this larger number, to calculate the value of the sum this variable 
+    stores 
+-> We are adding them with each iteration to a counter, called `sum_of_odd_digits`
+-> It's a way of taking a longer number which is composed of many digits, iterating through each of those digits and 
+    with each iteration adding the number to a counter 
+-> So after this, we now have the sum of the odd digits in the credit card, which we store in the `sum_of_odd_digits` 
+    variable 
+"""
+
     for digit in odd_digits:
         sum_of_odd_digits += int(digit)
 
