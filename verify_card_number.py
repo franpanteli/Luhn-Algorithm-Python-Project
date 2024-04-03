@@ -50,8 +50,26 @@ Building the sum_of_odd_digits variable:
     for digit in odd_digits:
         sum_of_odd_digits += int(digit)
 
+"""
+Initialising the value of variables (continued): 
+-> We have one variable for the sum of the even digits 
+-> And then we have another variable, which stores the even digits in the card number (function argument)
+-> 'Even digit' means the index that the number is stored at in the function input is even, not that the number which 
+    is stored at the index is even 
+-> We are now repeating the process we just did for the odd numbers, but for the even numbers
+-> Initialising the sum of these numbers as 0, in the `sum_of_even_digits` variable 
+-> And then even_digits <- This variable stores those numbers themselves
+-> Start from the second number (zero-indexed) in the input string, and then increase in increments of 2 
+-> Do this for the entire input string, and now we have a list of all of the numbers in the input string which were 
+    stored at even indices in it 
+-> This is an example of slicing 
+"""
+
     sum_of_even_digits = 0
     even_digits = card_number_reversed[1::2]
+
+
+
     for digit in even_digits:
         number = int(digit) * 2
         if number >= 10:
